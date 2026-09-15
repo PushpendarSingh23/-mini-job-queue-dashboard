@@ -1,6 +1,6 @@
 # Mini Job Queue Management Dashboard
 
-A production-ready, full-stack Mini Job Queue Management Dashboard built with **NestJS**, **TypeScript**, **PostgreSQL**, **TypeORM**, **React**, and **Vite**.
+A production-ready, full-stack Mini Job Queue Management Dashboard built with **NestJS**, **TypeScript**, **Neon PostgreSQL**, **TypeORM**, **React**, and **Vite**.
 
 **GitHub Repository**: [PushpendarSingh23/-mini-job-queue-dashboard](https://github.com/PushpendarSingh23/-mini-job-queue-dashboard)
 
@@ -8,20 +8,18 @@ This application provides job creation, filtering, real-time status monitoring, 
 
 ---
 
-## Architecture Overview
+## Deployment Architecture
 
 ```mermaid
 graph TD
-    User([User / Browser Tabs]) <-->|React + TypeScript + Tailwind| Frontend[Frontend - Vite App]
-    Frontend <-->|REST API / JSON| Controller[NestJS Controller]
-    Controller -->|DTO Validation Pipe| Service[NestJS Jobs Service]
-    Service -->|Atomic Conditional Update| DB[(PostgreSQL Database)]
+    User([User / Browser Tabs]) <-->|React 18 + Vite| Vercel[Frontend - Vercel Host]
+    Vercel <-->|REST API / HTTPS| Render[Backend - Render Node Web Service]
+    Render -->|TypeORM / SSL| Neon[(Neon / Supabase PostgreSQL DB)]
 ```
 
-The system follows a strict layered architecture:
-- **Frontend (`/frontend`)**: React 18, TypeScript, Vite, Tailwind CSS, Axios, Lucide Icons.
-- **Backend (`/backend`)**: NestJS, TypeScript, TypeORM, PostgreSQL, class-validator.
-- **Persistence Layer**: PostgreSQL with UUID primary keys and ENUM status indexing.
+- **Frontend (`/frontend`)**: React 18, TypeScript, Vite, Tailwind CSS, Axios → **Deployed on Vercel**
+- **Backend (`/backend`)**: NestJS, TypeScript, TypeORM, class-validator → **Deployed on Render**
+- **Database**: **Neon PostgreSQL** (or Supabase) via `DATABASE_URL` with SSL support.
 
 ---
 
