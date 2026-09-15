@@ -2,6 +2,8 @@
 
 A production-ready, full-stack Mini Job Queue Management Dashboard built with **NestJS**, **TypeScript**, **PostgreSQL**, **TypeORM**, **React**, and **Vite**.
 
+**GitHub Repository**: [PushpendarSingh23/-mini-job-queue-dashboard](https://github.com/PushpendarSingh23/-mini-job-queue-dashboard)
+
 This application provides job creation, filtering, real-time status monitoring, state machine enforcement, and **atomic database-level concurrency protection** against simultaneous status updates across multiple browser tabs or API clients.
 
 ---
